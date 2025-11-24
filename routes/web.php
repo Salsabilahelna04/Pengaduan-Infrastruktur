@@ -5,6 +5,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | ROUTE UNTUK WARGA

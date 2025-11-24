@@ -97,9 +97,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 | ROUTE UNTUK HALAMAN UMUM
 |--------------------------------------------------------------------------
 */
-Route::get('/', fn() => view('welcome'))->name('home');
+// Route::get('/', fn() => view('welcome'))->name('home');
 Route::get('/navbar', fn() => view('navbar'));
-Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+Route::get('/', fn() => view('dashboard'))->name('dashboard');
 
 
 /*

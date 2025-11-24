@@ -26,7 +26,7 @@
 </section>
 
 {{-- ===== WHY SECTION ===== --}}
-<<section class="why-section" id="why">
+<section class="why-section" id="why">
     <div class="container">
         <h2>Mengapa Memilih Layanan Pengaduan RT?</h2>
         <p>Kami hadir untuk memastikan setiap laporan masyarakat ditangani dengan cepat dan transparan oleh pengurus RT.</p>

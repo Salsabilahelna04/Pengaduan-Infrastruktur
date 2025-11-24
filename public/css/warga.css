@@ -1,0 +1,295 @@
+/* --- Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --bg: #f5f8ff;
+    --card: rgba(255, 255, 255, 0.88);
+    --muted: #a7b3c6;
+    --text: #1b1e28;
+    --accent: #0d2bcf;
+    --accent-2: #00b4ff;
+    --soft-gray: #e9eef6;
+    --shadow-sm: 0 6px 18px rgba(31,41,55,0.08);
+    --shadow-md: 0 12px 32px rgba(31,41,55,0.15);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --container-max: 1180px;
+}
+
+/* --- Global --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+
+    /* 🌄 Background utama dengan efek overlay lembut */
+    background: 
+        linear-gradient(rgba(13, 43, 207, 0.15), rgba(0, 180, 255, 0.15)),
+        url('../images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(2px);
+}
+
+/* === HEADER === */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    margin: 30px auto 20px;
+    padding: 16px 24px;
+    box-shadow: var(--shadow-sm);
+    max-width: var(--container-max);
+}
+
+.header h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent);
+    text-shadow: 0 2px 4px rgba(13,43,207,0.1);
+}
+
+/* === MENU SECTION === */
+.menu-section {
+    max-width: var(--container-max);
+    margin: 20px auto;
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.menu-section h3 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #14305b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* grid for menu cards */
+.menu-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+/* --- CARD STYLING --- */
+.card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    padding: 28px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(13,43,207,0.07), rgba(0,180,255,0.07));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Icon */
+.card .icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+    transform: scale(1.08);
+}
+
+/* Title & description */
+.card h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f1f3d;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 0.92rem;
+    color: #5b6778;
+}
+
+/* === LINK CLEANUP === */
+.card-link,
+.laporan-card-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+    cursor: pointer;
+}
+
+/* === LAPORAN SECTION === */
+.laporan-section {
+    margin: 36px auto 60px;
+    padding: 48px 28px;
+    max-width: var(--container-max);
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: var(--shadow-sm);
+}
+
+.laporan-section h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+.laporan-section h3::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.laporan-section p {
+    color: #586473;
+    font-size: 0.96rem;
+    margin-bottom: 30px;
+}
+
+/* === LAPORAN CARDS === */
+.laporan-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.laporan-card {
+    background: var(--card);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+.laporan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.laporan-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.laporan-card:hover img {
+    filter: brightness(1);
+}
+
+.laporan-card h4 {
+    margin: 14px 16px 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f1724;
+}
+
+.laporan-card p {
+    margin: 0 16px 16px;
+    font-size: 0.94rem;
+    color: #475569;
+}
+
+.laporan-card p span {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* === BUTTON STYLE (optional) === */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(42,69,255,0.14);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(13,43,207,0.25);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .header { 
+        flex-direction: column; 
+        gap: 8px; 
+        text-align: center; 
+    }
+
+    .menu-section { 
+        padding: 22px; 
+    }
+
+    .laporan-section { 
+        padding: 30px 20px; 
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .laporan-card img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h2 { font-size: 1.2rem; }
+    .card h4, .laporan-card h4 { font-size: 1rem; }
+}

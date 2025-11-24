@@ -1,0 +1,102 @@
+/* Background sama seperti profil */
+body {
+    background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Judul Halaman */
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e1e1e;
+}
+
+/* Form Container */
+.security-form {
+    background: #ffffff;
+    width: 430px;
+    margin: 40px auto;
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Label */
+.security-form label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input */
+.security-form input {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #aaa;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    background: #fafafa;
+    transition: 0.3s;
+}
+
+/* Focus input */
+.security-form input:focus {
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+    outline: none;
+}
+
+/* Tombol Submit */
+.security-form button {
+    width: 100%;
+    padding: 12px 0;
+    background: #4338ca;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Hover tombol */
+.security-form button:hover {
+    background: #312e81;
+}
+
+/* Alert Error */
+.alert-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px;
+    width: 430px;
+    margin: 25px auto;
+    border-radius: 10px;
+    border-left: 6px solid #dc2626;
+    font-size: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* Alert Success */
+.alert-success {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 12px;
+    width: 430px;
+    margin: 25px auto;
+    border-radius: 10px;
+    border-left: 6px solid #059669;
+    font-size: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+.btn-password {
+    background: navy;
+    color: white;  
+}

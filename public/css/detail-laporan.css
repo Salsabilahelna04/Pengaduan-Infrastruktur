@@ -1,0 +1,167 @@
+body {
+    background: linear-gradient(135deg, #d4e0ff, #f8f4ff);
+    font-family: 'Poppins', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.detail-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.detail-info {
+    flex: 1;
+    min-width: 400px;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    background: #f5f6fa;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+.detail-box {
+    background: #f2f3f5;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.detail-box p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.detail-image {
+    flex: 1;
+    text-align: center;
+}
+
+.detail-image img {
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-edit {
+    background: #001f8e;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-edit:hover {
+    background: #2a47b8;
+}
+
+.btn-delete {
+    background: #d63031;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #ff4747;
+}
+
+/* === STATUS COLORS === */
+.status {
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* Merah untuk diajukan */
+.status-diajukan {
+    background-color: #ffcccc;
+    color: #b00020;
+    border: 1px solid #b00020;
+}
+
+/* Kuning untuk verifikasi */
+.status-verifikasi {
+    background-color: #fff4cc;
+    color: #a87d00;
+    border: 1px solid #a87d00;
+}
+
+/* Oranye untuk sedang dikerjakan */
+.status-proses {
+    background-color: #ffe5b4;
+    color: #d17a00;
+    border: 1px solid #d17a00;
+}
+
+/* Hijau untuk selesai */
+.status-selesai {
+    background-color: #ccf5cc;
+    color: #007f3d;
+    border: 1px solid #007f3d;
+}
+
+
+@media (max-width: 768px) {
+    .detail-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+}

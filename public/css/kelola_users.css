@@ -1,0 +1,92 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === BACKGROUND HALAMAN === */
+body {
+    background: url('/images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* === JARAK DARI NAVBAR === */
+main, .profil-container {
+    margin-top: 110px !important; /* Agar turun dari navbar */
+}
+
+.user-container {
+    width: 85%;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.user-container h2 {
+    margin-bottom: 20px;
+    color: #090e63;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table th {
+    background: #f6f6f6;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit {
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edit-form input,
+.edit-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.btn-save {
+    width: 120px;
+    padding: 10px;
+    background: #090e63;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}

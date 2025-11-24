@@ -1,0 +1,167 @@
+/* === RESET DAN FONT === */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f6fa;
+}
+
+/* === LAYOUT UTAMA === */
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* === FORM KIRI === */
+.auth-form {
+    flex: 1;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.auth-form h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 26px;
+    color: #00083D;
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+}
+
+.auth-form input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.auth-form button {
+    background-color: #00083D;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #001065;
+}
+
+.auth-form p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.auth-form a {
+    color: #00083D;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* === BAGIAN KANAN === */
+.auth-banner {
+    flex: 1;
+    background: url('../images/bg.png') center/cover no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* === KONTEN LOGO DAN TEKS === */
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-20px); /* teks sedikit naik agar lebih menyatu dengan logo */
+}
+
+.logo {
+    width: 210px;
+    height: auto;
+    margin: 0;
+}
+
+.banner-text {
+    margin-top: -8px; /* teks sedikit lebih dekat ke logo */
+}
+
+.banner-text h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    letter-spacing: 0.5px;
+}
+
+.banner-text p {
+    margin: 2px 0 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f2f2f2;
+    line-height: 1.4;
+}
+
+/* === ALERTS === */
+.alert {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.alert.error {
+    background: #ffd5d5;
+    color: #a10000;
+    border: 1px solid #a10000;
+}
+
+.alert.success {
+    background: #d4ffd8;
+    color: #006b1e;
+    border: 1px solid #009933;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-banner {
+        display: none;
+    }
+
+    .auth-form {
+        border-radius: 0;
+        height: 100vh;
+        box-shadow: none;
+    }
+}

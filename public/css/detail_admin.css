@@ -1,0 +1,153 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #cbd5e1;
+    margin: 0;
+    padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container utama */
+.container-detail {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    padding: 30px 40px;
+}
+
+.container-detail h2 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Kartu detail */
+.detail-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+/* Info text */
+.detail-info {
+    flex: 1;
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 20px;
+    color: #333;
+}
+
+.detail-info p {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.detail-info strong {
+    color: #111;
+}
+
+/* Foto */
+.detail-img {
+    flex-basis: 35%;
+    text-align: center;
+}
+
+.detail-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* STATUS BADGE */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+/* Warna status */
+.status.diajukan {
+    background-color: #dc2626; /* merah */
+}
+.status.verifikasi {
+    background-color: #f59e0b; /* oranye */
+}
+.status.sedang\ dikerjakan {
+    background-color: #eab308; /* kuning */
+}
+.status.selesai {
+    background-color: #16a34a; /* hijau */
+}
+
+/* FORM ubah status */
+.form-status {
+    margin-top: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-status label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.form-status select {
+    width: 250px;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-status select:focus {
+    border-color: #2563eb;
+}
+
+.btn-update {
+    margin-top: 15px;
+    padding: 8px 18px;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-update:hover {
+    background-color: #1d4ed8;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .detail-card {
+        flex-direction: column;
+    }
+
+    .detail-img {
+        flex-basis: 100%;
+    }
+}

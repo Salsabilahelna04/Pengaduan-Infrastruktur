@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@section('navbar')
-    @include('layouts.navbar_admin')
-@endsection
+
 @section('navbar')
     @include('layouts.navbar_admin')
 @endsection
@@ -22,6 +20,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Foto</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>No HP</th>
@@ -34,22 +33,36 @@
             @foreach($users as $user)
                 <tr>
                     <td>{{ $user->id }}</td>
+
+                    <td>
+                        <img src="{{ $user->foto 
+    ? asset('storage/foto_profil/' . $user->foto) 
+    : asset('images/default-user.png') 
+}}" 
+class="detail-photo">
+
+                    </td>
+
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->phone ?? '-' }}</td>
                     <td>{{ $user->address ?? '-' }}</td>
 
                     <td class="actions">
-                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn-edit">Edit</a>
 
+                        {{-- tombol lihat detail --}}
+                        <a href="{{ route('admin.users.show', $user->id) }}"
+                           class="btn-detail">Detail</a>
+
+                        {{-- tombol delete --}}
                         <form action="{{ route('admin.users.destroy', $user->id) }}"
                               method="POST"
                               onsubmit="return confirm('Hapus pengguna ini?');">
-
                             @csrf
                             @method('DELETE')
                             <button class="btn-delete">Hapus</button>
                         </form>
+
                     </td>
                 </tr>
             @endforeach

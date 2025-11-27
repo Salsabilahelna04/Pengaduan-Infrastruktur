@@ -46,4 +46,11 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')
             ->with('success', 'Pengguna berhasil dihapus');
     }
+
+    public function show($id)
+{
+    $user = User::findOrFail($id);
+    return view('admin.users.show', compact('user'));
+}
+
 }

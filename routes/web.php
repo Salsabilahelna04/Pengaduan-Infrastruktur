@@ -89,6 +89,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     ->name('admin.laporan.destroy')
     ->middleware('admin');
 
+    
 });
 
 
@@ -128,18 +129,16 @@ Route::get('/informasi', [\App\Http\Controllers\InformasiController::class, 'ind
 
     Route::middleware(['auth'])->prefix('admin')->group(function () {
 
- 
-
-    // KELola pengguna
+    // Kelola pengguna - daftar
     Route::get('/pengguna', [App\Http\Controllers\Admin\UserController::class, 'index'])
         ->name('admin.users.index');
 
-    Route::get('/pengguna/{id}/edit', [App\Http\Controllers\Admin\UserController::class, 'edit'])
-        ->name('admin.users.edit');
+    // Detail pengguna
+    Route::get('/pengguna/{id}', [App\Http\Controllers\Admin\UserController::class, 'show'])
+        ->name('admin.users.show');
 
-    Route::put('/pengguna/{id}', [App\Http\Controllers\Admin\UserController::class, 'update'])
-        ->name('admin.users.update');
-
+    // Hapus pengguna
     Route::delete('/pengguna/{id}', [App\Http\Controllers\Admin\UserController::class, 'destroy'])
         ->name('admin.users.destroy');
 });
+

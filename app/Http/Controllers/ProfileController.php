@@ -54,23 +54,25 @@ class ProfileController extends Controller
     // ================================
     // UPDATE FOTO PROFIL
     // ================================
-    public function updatePhoto(Request $request)
-    {
-        $request->validate([
-            'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048'
-        ]);
+   public function updatePhoto(Request $request)
+{
+    $request->validate([
+        'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048'
+    ]);
 
-        $user = Auth::user();
+    $user = Auth::user();
 
-        $filename = time() . '.' . $request->foto->extension();
+    $filename = time() . '.' . $request->foto->extension();
 
-        $request->foto->storeAs('foto_profil', $filename, 'public');
+    // simpan file ke storage
+    $path = $request->foto->storeAs('foto_profil', $filename, 'public');
 
-        $user->foto = $filename;
-        $user->save();
+    // simpan path ke DB
+    $user->foto = $path;   // hasilnya "foto_profil/xxxx.jpg"
+    $user->save();
 
-        return back()->with('success', 'Foto profil berhasil diperbarui!');
-    }
+    return back()->with('success', 'Foto profil berhasil diperbarui!');
+}
 
     // ================================
     // HALAMAN KEAMANAN

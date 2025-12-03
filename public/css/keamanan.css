@@ -1,19 +1,6 @@
-/* Background sama seperti profil */
-body {
-    background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Judul Halaman */
-h2 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 26px;
-    font-weight: 700;
-    color: #1e1e1e;
-}
-
-/* Form Container */
+/* --------------------------------------------------
+   RESET & GLOBAL STYLE
+-------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -21,185 +8,137 @@ h2 {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Background sama seperti profil */
 body {
-    background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
-    font-family: 'Poppins', sans-serif;
+    background: url('/images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
 }
 
-/* Judul Halaman */
+/* --------------------------------------------------
+   JUDUL HALAMAN
+-------------------------------------------------- */
 h2 {
     text-align: center;
     margin-top: 40px;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
-    color: #1e1e1e;
+    color: #222;
+    letter-spacing: 0.5px;
 }
 
-/* Form Container */
+/* --------------------------------------------------
+   FORM CONTAINER
+-------------------------------------------------- */
 .security-form {
-    background: #ffffff;
-    width: 430px;
+    background: rgba(255, 255, 255, 0.92);
+    width: 450px;
     margin: 40px auto;
-    padding: 30px 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 35px 38px;
+    border-radius: 22px;
+
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.12),
+        0 3px 8px rgba(0, 0, 0, 0.06);
+
+    backdrop-filter: blur(5px);
+    animation: fadeUp 0.4s ease-out;
 }
 
-/* Label */
+@keyframes fadeUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+/* --------------------------------------------------
+   LABEL & INPUT
+-------------------------------------------------- */
 .security-form label {
     font-size: 15px;
     font-weight: 600;
-    color: #333;
+    color: #444;
+    margin-bottom: 6px;
     display: block;
-    margin-bottom: 5px;
 }
 
-/* Input */
 .security-form input {
     width: 100%;
-    padding: 12px 13px;
-    border: 1px solid #aaa;
+    padding: 12px 14px;
+    border: 1px solid #c5c5c5;
     border-radius: 12px;
-    margin-bottom: 18px;
-    font-size: 15px;
+    margin-bottom: 20px;
+
     background: #fafafa;
-    transition: 0.3s;
+    font-size: 15px;
+
+    transition: all 0.3s ease;
 }
 
-/* Focus input */
+.security-form input:hover {
+    border-color: #6b8bff;
+}
+
 .security-form input:focus {
     border-color: #3b82f6;
     background: #fff;
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.35);
     outline: none;
 }
 
-/* Tombol Submit */
-.security-form button {
+/* --------------------------------------------------
+   BUTTON
+-------------------------------------------------- */
+.security-form button,
+.btn-password {
     width: 100%;
     padding: 12px 0;
-    background: #4338ca;
-    color: white;
+
     border: none;
     border-radius: 12px;
+
+    background: #4338ca;
+    color: white;
+
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.25s;
+
+    box-shadow: 0 4px 10px rgba(67, 56, 202, 0.25);
+    transition: 0.25s ease;
 }
 
-/* Hover tombol */
-.security-form button:hover {
+.security-form button:hover,
+.btn-password:hover {
     background: #312e81;
-}
-
-/* Alert Error */
-.alert-danger {
-    background: #fee2e2;
-    color: #b91c1c;
-    padding: 12px;
-    width: 430px;
-    margin: 25px auto;
-    border-radius: 10px;
-    border-left: 6px solid #dc2626;
-    font-size: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-/* Alert Success */
-.alert-success {
-    background: #d1fae5;
-    color: #065f46;
-    padding: 12px;
-    width: 430px;
-    margin: 25px auto;
-    border-radius: 10px;
-    border-left: 6px solid #059669;
-    font-size: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
 }
 
 .btn-password {
     background: navy;
-    color: white;  
 }
 
-  
-/* Label */
-.security-form label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #333;
-    display: block;
-    margin-bottom: 5px;
-}
+/* --------------------------------------------------
+   ALERT MESSAGE
+-------------------------------------------------- */
+.alert-danger,
+.alert-success {
+    width: 450px;
+    margin: 25px auto;
+    padding: 14px 18px;
 
-/* Input */
-.security-form input {
-    width: 100%;
-    padding: 12px 13px;
-    border: 1px solid #aaa;
     border-radius: 12px;
-    margin-bottom: 18px;
     font-size: 15px;
-    background: #fafafa;
-    transition: 0.3s;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
-/* Focus input */
-.security-form input:focus {
-    border-color: #3b82f6;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
-    outline: none;
-}
-
-/* Tombol Submit */
-.security-form button {
-    width: 100%;
-    padding: 12px 0;
-    background: #4338ca;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-/* Hover tombol */
-.security-form button:hover {
-    background: #312e81;
-}
-
-/* Alert Error */
 .alert-danger {
     background: #fee2e2;
     color: #b91c1c;
-    padding: 12px;
-    width: 430px;
-    margin: 25px auto;
-    border-radius: 10px;
     border-left: 6px solid #dc2626;
-    font-size: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
-/* Alert Success */
 .alert-success {
     background: #d1fae5;
     color: #065f46;
-    padding: 12px;
-    width: 430px;
-    margin: 25px auto;
-    border-radius: 10px;
     border-left: 6px solid #059669;
-    font-size: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-.btn-password {
-    background: navy;
-    color: white;  
 }

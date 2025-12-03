@@ -68,7 +68,7 @@ class ProfileController extends Controller
     $path = $request->foto->storeAs('foto_profil', $filename, 'public');
 
     // simpan path ke DB
-    $user->foto = $path;   // hasilnya "foto_profil/xxxx.jpg"
+    $user->foto = $filename;   // hasilnya "foto_profil/xxxx.jpg"
     $user->save();
 
     return back()->with('success', 'Foto profil berhasil diperbarui!');

@@ -60,11 +60,29 @@ class LaporanController extends Controller
     }
 
     /** DASHBOARD ADMIN */
-    public function adminIndex()
-    {
-        $laporans = Laporan::with('warga')->latest()->get();
-        return view('dashboard_admin', compact('laporans'));
+    public function adminIndex(Request $request)
+{
+    $filter = $request->filter;
+
+    $query = Laporan::with('warga')->orderBy('id_laporan', 'asc');
+
+    // FILTER BERDASARKAN CARD
+    if ($filter === 'mendesak') {
+        $query->where('urgensi', 'Mendesak');
+    } elseif ($filter === 'pending') {
+        $query->where('status', '!=', 'selesai');
     }
+    // jika 'semua' atau tidak ada filter → tidak diubah
+
+    $laporans = $query->get();
+
+    return view('dashboard_admin', [
+        'laporans' => $laporans,
+        'filter'   => $filter
+    ]);
+}
+
+
 
     /** DETAIL LAPORAN ADMIN */
     public function adminShow($id_laporan)

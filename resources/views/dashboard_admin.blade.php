@@ -14,34 +14,45 @@
 
     {{-- STATISTIK CARD --}}
     <div class="card-container">
-        <div class="card">
+
+        <a href="{{ route('dashboard.admin', ['filter' => 'semua']) }}" class="card">
             <div>
                 <h4>Total Laporan</h4>
                 <span>{{ $laporans->count() }}</span>
             </div>
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Total Laporan Icon">
-        </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png">
+        </a>
 
-        <div class="card">
+        <a href="{{ route('dashboard.admin', ['filter' => 'mendesak']) }}" class="card">
             <div>
                 <h4>Laporan Mendesak</h4>
                 <span>{{ $laporans->where('urgensi', 'Mendesak')->count() }}</span>
             </div>
-            <img src="https://cdn-icons-png.flaticon.com/512/564/564619.png" alt="Laporan Mendesak Icon">
-        </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/564/564619.png">
+        </a>
 
-        <div class="card">
+        <a href="{{ route('dashboard.admin', ['filter' => 'pending']) }}" class="card">
             <div>
                 <h4>Menunggu Tindakan</h4>
                 <span>{{ $laporans->where('status', '!=', 'selesai')->count() }}</span>
             </div>
-            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Menunggu Tindakan Icon">
-        </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+        </a>
+
     </div>
 
     {{-- TABEL LAPORAN --}}
     <div class="table-container">
-        <h3>Daftar Laporan Masuk</h3>
+        <h3 class="section-title">
+        Daftar Laporan Masuk
+
+        @if($filter == 'mendesak')
+            <span class="filter-badge filter-mendesak">Mendesak</span>
+        @elseif($filter == 'pending')
+            <span class="filter-badge filter-pending">Menunggu Tindakan</span>
+        @endif
+        </h3>
+
         <table>
             <thead>
                 <tr>

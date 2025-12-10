@@ -1,3 +1,4 @@
+/* ===================== GLOBAL ===================== */
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -7,20 +8,27 @@
 
 body {
     background: url('/images/bg.png') no-repeat center center fixed;
-    background-size: cover;}
+    background-size: cover;
+}
 
-/* ===== TITLE ===== */
+/* ===================== PAGE TITLE ===================== */
 h2 {
     margin: 30px 50px 10px;
     color: #333;
 }
 
-/* ===== CARDS ===== */
+/* ===================== CARD SECTION ===================== */
 .card-container {
     display: flex;
     justify-content: flex-start;
     gap: 30px;
     margin: 20px 50px;
+}
+
+.card-container a {
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
 }
 
 .card {
@@ -49,13 +57,21 @@ h2 {
     width: 35px;
 }
 
-/* ===== TABLE ===== */
+/* ===================== TABLE SECTION ===================== */
 .table-container {
     background: white;
-    margin: 30px 50px;
+    margin: 20px 50px 40px;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Judul tabel rapi & sejajar */
+.table-container h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 table {
@@ -78,7 +94,7 @@ td {
     font-size: 14px;
 }
 
-/* ===== STATUS & URGENCY ===== */
+/* ===================== STATUS & URGENCY ===================== */
 .status-belum {
     background-color: #ffbcbc;
     color: #8b0000;
@@ -105,7 +121,7 @@ td {
     font-weight: 600;
 }
 
-/* ===== BUTTON ===== */
+/* ===================== BUTTONS ===================== */
 .btn-detail {
     background-color: #007bff;
     color: white;
@@ -113,31 +129,62 @@ td {
     border-radius: 6px;
     text-decoration: none;
     font-size: 13px;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 .btn-detail:hover {
     background-color: #0056b3;
 }
- .btn-delete {
+
+.btn-delete {
     background-color: #e63946;
     color: white;
     padding: 6px 12px;
     border-radius: 5px;
-    text-decoration: none;
     border: none;
     cursor: pointer;
+    font-size: 13px;
 }
 
 .btn-delete:hover {
     background-color: #b71c1c;
 }
-    .btn-edit {
-        background-color: #1d3557;
-        color: white;
-        padding: 6px 12px;
-        border-radius: 5px;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-    }
+
+.btn-edit {
+    background-color: #1d3557;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* ===================== FILTER TITLE ===================== */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-badge {
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Warna filter */
+.filter-mendesak {
+    background-color: #ffbcbc;
+    color: #8b0000;
+}
+
+.filter-pending {
+    background-color: #ffe9a7;
+    color: #b8860b;
+}
